@@ -7,7 +7,7 @@ export default defineConfig({
   integrations: [mdx(), tailwind()],
   // GitHub Pages deployment configuration
   site: 'https://PranavViswanath.github.io',
-  base: '/adaptive-reasoning',
+  base: '/tinker-writeup',
   output: 'static',
 });
 
