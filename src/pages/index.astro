@@ -67,11 +67,11 @@ const imageBase = baseUrl.endsWith('/') ? baseUrl : baseUrl + '/';
       </p>
 
       <p>
-        In this read, we'll cover how I tested this idea using RLVR (Reinforcement Learning with Verifiable Rewards) on GSM8K math benchmarks with custom GRPO environments on Tinker. <strong> And the findings might surprise you </strong> (as they did me) - not only did the model learn to use fewer tokens, it actually got <strong> more accurate </strong> and developed adaptive behavior, automatically spending less compute on easy problems and more on hard ones, without ever being told which was which.
+        In this read, we'll cover how I tested this idea using RLVR (Reinforcement Learning with Verifiable Rewards) on GSM8K math benchmarks with custom GRPO environments on Tinker. 
       </p>
 
       <p>
-        <strong>Turns out, with a little ingenuity (and a ton of infra help from Tinker), we can go a long way!</strong>
+         The findings might surprise you (as they did me) - not only did the model learn to use fewer tokens, it actually got <strong>more accurate</strong> and developed adaptive behavior, automatically spending less compute on easy problems and more on hard ones, without ever being told which was which. Turns out, with a little ingenuity (and a ton of infra help from Tinker), we can go a long way!
       </p>
 
       <h2>RL Primer & Infrastructure</h2>
@@ -176,7 +176,7 @@ const imageBase = baseUrl.endsWith('/') ? baseUrl : baseUrl + '/';
       </p>
 
       <p>
-        The counterintuitive finding: token constraints actually <strong>improved accuracy! </strong>. Most likely, the penalties likely act as regularization, forcing focused reasoning instead of verbose rambling.
+        The counterintuitive finding: token constraints actually <strong>improved accuracy! </strong> Most likely, the penalties likely act as regularization, forcing focused reasoning instead of verbose rambling.
       </p>
 
       <!-- E2H Behavior by Difficulty Image -->
@@ -215,12 +215,12 @@ const imageBase = baseUrl.endsWith('/') ? baseUrl : baseUrl + '/';
 
       <h2>What's Next</h2>
       <p>
-        This work has clear limitations that point toward exciting directions. The reward function is deliberately simple - SelfBudgeter's approach where models predict their own budgets likely captures richer signal. The dataset is narrow: only math via GSM8K/MATH. Does this transfer to code generation or scientific reasoning? That's worth exploring. The high alpha failure mode reveals something fundamental - you can't compress reasoning arbitrarily without breaking correctness. But there's room to push further: dynamic per-problem budgets, curriculum learning that gradually tightens constraints, or testing on larger models to see if scale changes the tradeoff.
+        This work has clear limitations that point toward exciting future directions. The reward function is deliberately simple - SelfBudgeter's approach where models predict their own budgets likely captures richer signal. The dataset is narrow: only math via GSM8K/MATH. Does this transfer to code generation or scientific reasoning? That's worth exploring. The high alpha failure mode reveals something fundamental - you can't compress reasoning arbitrarily without breaking correctness. But there's room to push further: dynamic per-problem budgets, curriculum learning that gradually tightens constraints, or testing on larger models to see if scale changes the tradeoff.
       </p>
 
       <h2>Closing Thoughts</h2>
       <p>
-        What excites me most actually isn't the 59.6% token reduction - it's the 2.21× adaptive ratio. The model learned to reason about its own reasoning without explicit difficulty labels - that's <strong> emergent metacognition from verifiable rewards </strong>. At scale, this matters beyond cost. Millions of reasoning queries run daily; 59.6% fewer tokens means measurably less energy per query. Coming from climate tech, that environmental angle resonates. Huge thanks to Thinking Machines for making distributed RL training accessible through Tinker - this wouldn't exist without that infrastructure. Thanks to NVIDIA and ServiceNow for the podcast that sparked the idea. The code is on GitHub, and I'd love to hear what you build with it.
+        I deeply enjoyed contributing this small step towards a world of efficient, aligned models in the hands of anyone, anywhere. Watching the model learning to reason about its own reasoning without explicit difficulty labels was special - that's <strong> emergent metacognition from verifiable rewards </strong> in action! At scale, with millions of reasoning queries running daily, 59.6% fewer tokens with a 2.21x adaptive ratio means measurably more accurate, cheaper, reliable intelligence. Huge thanks to Thinking Machines for making distributed RL training accessible through Tinker - this wouldn't exist without that infrastructure. Thanks to NVIDIA and ServiceNow for the podcast that sparked the idea. The code is on <a href="https://github.com/PranavViswanath/adaptive-reasoning-rl" target="_blank" rel="noopener noreferrer">GitHub</a>, and I'd love to hear what you build with it.
       </p>
     </div>
   </article>
